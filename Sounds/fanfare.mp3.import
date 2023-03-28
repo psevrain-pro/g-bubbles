@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fanfare.mp3-2262aae3da171967737cf9bd5f3a4769.mp3str"
+
+[deps]
+
+source_file="res://Sounds/fanfare.mp3"
+dest_files=[ "res://.import/fanfare.mp3-2262aae3da171967737cf9bd5f3a4769.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

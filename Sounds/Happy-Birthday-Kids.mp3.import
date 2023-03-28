@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Happy-Birthday-Kids.mp3-ca39303b15ba2322c1af00b63c88e125.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Happy-Birthday-Kids.mp3"
+dest_files=[ "res://.import/Happy-Birthday-Kids.mp3-ca39303b15ba2322c1af00b63c88e125.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

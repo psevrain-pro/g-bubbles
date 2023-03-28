@@ -1,0 +1,171 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/bg_etoiles.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/ButtonText_Small_Blue_Round.png" type="Texture" id=3]
+[ext_resource path="res://theme_ecirture.tres" type="Theme" id=4]
+[ext_resource path="res://Sprites/ButtonText_Small_ROund.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/ButtonText_Small_Orange_Round.png" type="Texture" id=6]
+[ext_resource path="res://Menu.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/Box_Blue_Rounded.png" type="Texture" id=8]
+[ext_resource path="res://theme_bulle.tres" type="Theme" id=9]
+[ext_resource path="res://Sprites/button_music.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=4]
+size = 90
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 535, 249 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 520, 236 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 534, 249 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -15.0
+margin_top = -16.0
+margin_right = 985.0
+margin_bottom = 1035.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 131.0
+margin_top = 27.0
+margin_right = 2638.0
+margin_bottom = 437.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+patch_margin_left = 219
+patch_margin_top = 191
+patch_margin_right = 263
+patch_margin_bottom = 219
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titre" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1026.0
+margin_bottom = 112.0
+theme = SubResource( 5 )
+custom_colors/font_color = Color( 0.678431, 0, 0, 1 )
+text = "Le jeu des bulles"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Last" type="RichTextLabel" parent="."]
+margin_left = 78.0
+margin_top = 121.0
+margin_right = 959.0
+margin_bottom = 231.0
+theme = ExtResource( 4 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button1" type="Button" parent="Buttons"]
+margin_left = 40.0
+margin_top = 262.0
+margin_right = 310.0
+margin_bottom = 345.0
+theme = ExtResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "Niveau 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Buttons"]
+margin_left = 266.0
+margin_top = 382.0
+margin_right = 536.0
+margin_bottom = 465.0
+theme = ExtResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "Niveau 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Buttons"]
+margin_left = 530.0
+margin_top = 268.0
+margin_right = 800.0
+margin_bottom = 351.0
+theme = ExtResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "Niveau 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Buttons"]
+margin_left = 725.0
+margin_top = 384.0
+margin_right = 995.0
+margin_bottom = 467.0
+theme = ExtResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "Niveau 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMusic" type="TextureButton" parent="."]
+margin_left = 60.0
+margin_top = 525.0
+margin_right = 110.0
+margin_bottom = 575.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anniversaire" type="RichTextLabel" parent="."]
+margin_left = 147.0
+margin_top = 514.0
+margin_right = 905.0
+margin_bottom = 599.0
+theme = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[rainbow]Bon anniversaire Maelys ![/rainbow]"
+text = "Bon anniversaire Maelys !"
+
+[connection signal="pressed" from="Buttons/Button1" to="." method="_start" binds= [ 1 ]]
+[connection signal="pressed" from="Buttons/Button2" to="." method="_start" binds= [ 2 ]]
+[connection signal="pressed" from="Buttons/Button3" to="." method="_start" binds= [ 3 ]]
+[connection signal="pressed" from="Buttons/Button4" to="." method="_start" binds= [ 4 ]]
+[connection signal="pressed" from="ButtonMusic" to="." method="_on_ButtonMusic_pressed"]

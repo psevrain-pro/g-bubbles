@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Happy-Birthday-Tunes.mp3-ef90c896aacabffdedb6100aed6707dc.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Happy-Birthday-Tunes.mp3"
+dest_files=[ "res://.import/Happy-Birthday-Tunes.mp3-ef90c896aacabffdedb6100aed6707dc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

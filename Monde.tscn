@@ -1,0 +1,174 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sprites/platformer_background_2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/bulle_rouge.png" type="Texture" id=2]
+[ext_resource path="res://Monde.gd" type="Script" id=3]
+[ext_resource path="res://IconeScore.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Chrono.gd" type="Script" id=5]
+[ext_resource path="res://theme_ecirture.tres" type="Theme" id=6]
+[ext_resource path="res://Sprites/Icon__X.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Box_Orange_Rounded.png" type="Texture" id=8]
+[ext_resource path="res://theme_bulle.tres" type="Theme" id=9]
+[ext_resource path="res://Sprites/Banner_Orange.png" type="Texture" id=10]
+[ext_resource path="res://Background.gd" type="Script" id=11]
+
+[node name="Monde" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 11 )
+
+[node name="Progression" type="Node2D" parent="."]
+
+[node name="IconeScore" parent="Progression" instance=ExtResource( 4 )]
+position = Vector2( 740, 30 )
+
+[node name="IconeScore2" parent="Progression" instance=ExtResource( 4 )]
+position = Vector2( 800, 30 )
+
+[node name="IconeScore3" parent="Progression" instance=ExtResource( 4 )]
+position = Vector2( 860, 30 )
+
+[node name="IconeScore4" parent="Progression" instance=ExtResource( 4 )]
+position = Vector2( 920, 30 )
+
+[node name="IconeScore5" parent="Progression" instance=ExtResource( 4 )]
+position = Vector2( 980, 30 )
+
+[node name="ButtonBack" type="TextureButton" parent="."]
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 175.0
+margin_bottom = 176.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chrono" type="Label" parent="."]
+margin_left = 402.0
+margin_top = 7.0
+margin_right = 457.0
+margin_bottom = 52.0
+theme = ExtResource( 6 )
+text = "12s"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Chrono"]
+autostart = true
+
+[node name="Bulles" type="Node2D" parent="."]
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 557.0
+margin_right = 1014.0
+margin_bottom = 592.0
+theme = ExtResource( 6 )
+text = "Choisis la bulle avec le chiffre le plus grand"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Debug" type="Sprite" parent="."]
+visible = false
+position = Vector2( 550, 324 )
+texture = ExtResource( 2 )
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_right = 1153.0
+margin_bottom = 647.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup"]
+margin_left = 128.0
+margin_top = 103.0
+margin_right = 889.0
+margin_bottom = 566.0
+texture = ExtResource( 8 )
+patch_margin_left = 203
+patch_margin_top = 229
+patch_margin_right = 220
+patch_margin_bottom = 234
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Banière" type="TextureRect" parent="Popup"]
+margin_left = 230.0
+margin_top = 57.0
+margin_right = 1369.0
+margin_bottom = 514.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titre" type="Label" parent="Popup"]
+margin_left = 233.0
+margin_top = 92.0
+margin_right = 796.0
+margin_bottom = 137.0
+theme = ExtResource( 6 )
+text = "BRAVO !!!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TuEsUne" type="Label" parent="Popup"]
+margin_left = 189.0
+margin_top = 221.0
+margin_right = 386.0
+margin_bottom = 266.0
+theme = ExtResource( 6 )
+text = "Tu es une..."
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TuEs" type="RichTextLabel" parent="Popup"]
+margin_left = 234.0
+margin_top = 289.0
+margin_right = 825.0
+margin_bottom = 483.0
+rect_pivot_offset = Vector2( 982, 154 )
+theme = ExtResource( 9 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ButtonBack2" type="TextureButton" parent="Popup"]
+margin_left = 777.0
+margin_top = 475.0
+margin_right = 940.0
+margin_bottom = 638.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogue" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Dialogue"]
+
+[connection signal="pressed" from="ButtonBack" to="." method="fermeture"]
+[connection signal="timeout" from="Chrono/Timer" to="Chrono" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Popup/ButtonBack2" to="." method="fermeture"]

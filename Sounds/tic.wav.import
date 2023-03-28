@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tic.wav-b50ad569cd35d36002966b3c8602c755.sample"
+
+[deps]
+
+source_file="res://Sounds/tic.wav"
+dest_files=[ "res://.import/tic.wav-b50ad569cd35d36002966b3c8602c755.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

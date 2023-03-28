@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Upbeat-Birthday-Song.mp3-ef14b5930d069c923b3dae0c7ecfb645.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Upbeat-Birthday-Song.mp3"
+dest_files=[ "res://.import/Upbeat-Birthday-Song.mp3-ef14b5930d069c923b3dae0c7ecfb645.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
